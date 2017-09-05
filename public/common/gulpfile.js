@@ -36,28 +36,7 @@ var paths = {
 /*
 SCSSをコンパイル
 */
-gulp.task('ScssDev', function() {
-  return gulp.src(paths.scss + '**/*.scss')
-    .pipe(plumber({
-      errorHandler: function(err) {
-        console.log(err.messageFormatted);
-        this.emit('end');
-      }
-    }))
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      outputStyle: 'compressed'
-    }))
-    .on('error', function(err) {
-      console.log(err.message);
-    })
-    .pipe(cssnext({
-        browsers: ['last 3 versions']
-    }))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.css));
-});
-gulp.task('ScssProduction', function() {
+gulp.task('scss', function() {
   return gulp.src(paths.scss + '**/*.scss')
     .pipe(plumber({
       errorHandler: function(err) {
@@ -72,7 +51,7 @@ gulp.task('ScssProduction', function() {
       console.log(err.message);
     })
     .pipe(cssnext({
-        browsers: ['last 3 versions']
+        browsers: ['last 5 versions']
     }))
     .pipe(gulp.dest(paths.css));
 });
@@ -126,16 +105,12 @@ gulp.task('js', function(){
  * Run Task
  *************************************************/
 //開発版
-gulp.task('dev', function() {
-  gulp.watch([paths.scss + '**/*.scss'], ['ScssDev']);
-});
-//リリース版
-gulp.task('pro', function() {
-  gulp.watch([paths.scss + '**/*.scss'], ['ScssProduction']);
+gulp.task('complie', function() {
+  gulp.watch([paths.scss + '**/*.scss'], ['scss']);
 });
 //ライブリロード
 gulp.task('reload', function() {
-  gulp.watch(['dev', 'browser-sync', 'reload']);
+  gulp.watch(['scss', 'browser-sync', 'reload']);
 });
 //デフォルト
-gulp.task('default', ['dev']);
+gulp.task('default', ['complie']);

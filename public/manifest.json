@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "name": "Web Starter Kit",
+  "launch_path": "/index.php",
+  "description": "A front-end template that helps you build fast, modern mobile web apps.",
+	"icons": [{
+    "src": "/common/img/touch.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "developer": {
+    "name": "",
+    "url": ""
+	},
+	"background_color": "#2196F3",
+	"display": "standalone",
+	"theme_color": "#2196F3",
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "ja",
+  "permissions": {
+  },
+  "locales": {
+    "ja": {
+      "name": "Web Starter Kit",
+      "description": "A front-end template that helps you build fast, modern mobile web apps."
+    }
+  }
+}

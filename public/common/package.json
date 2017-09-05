@@ -14,8 +14,7 @@
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
-    "imagemin-pngquant": "latest",
-    "gulp-sourcemaps": "latest"
+    "imagemin-pngquant": "latest"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
