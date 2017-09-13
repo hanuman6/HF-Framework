@@ -5,260 +5,57 @@
 //============================================================
 
 //--------------------------------------
-//    close-button（閉じるボタン）
-//--------------------------------------
-
-@mixin close-button($size: 32px, $border-width: 1px, $color: #000) {
-  @include ib;
-  position: relative;
-  width: $size;
-  height: $size;
-  
-  &:hover {
-    cursor: pointer;
-  }
-  
-  &::before, &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: $size;
-    height: $border-width;
-    background-color: $color;
-  }
-  
-  &::before {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-  }
-  
-  &::after {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-  }
-}
-
-//--------------------------------------
 //    clearfix（クリアフィックス）
 //--------------------------------------
 @mixin cf {
-    *zoom: 1;
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    &:before {
-        content: "";
-        display: table;
-    }
+	*zoom: 1;
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	&:before {
+		content: "";
+		display: table;
+	}
 }
 //@include cf
-
-//--------------------------------------
-//    css3 transition（トランジッション）
-//--------------------------------------
-@mixin tr($transition-property,$transition-time,$method) {
-    transition: $transition-property $transition-time $method;
-}
-//@include tr(all, 0.2s, ease-in-out);
-
-//--------------------------------------
-//    font-size（フォントサイズ）
-//--------------------------------------
-@mixin fz($size) {
-    font-size: $size;
-    font-size: ($size / 16px) * 1rem;
-}
-//@include fz(14px);
-
-//--------------------------------------
-//    opacity（不透明度）
-//--------------------------------------
-@mixin op($opacity) {
-    opacity: $opacity;
-}
-//@include op(0.5);
-
-//--------------------------------------
-//    box-sizing（ボックスサイズ）
-//--------------------------------------
-@mixin box-sizing($box-model) {
-  -webkit-box-sizing: $box-model; // Safari <= 5
-          box-sizing: $box-model;
-}
-//@include box-sizing(border-box);
-
-//--------------------------------------
-//    box-shadow（ボックスシャドウ）
-//--------------------------------------
-@mixin bs( $h:0px, $v:0, $b:10px, $s:0px, $c:rgba(0,0,0,0.2)) {
-        box-shadow: $h $v $b $s $c;
-    }
-//@include bs(8px, 8px);
-
-//--------------------------------------
-//    inline-block（インラインブロック）
-//--------------------------------------
-@mixin ib {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-}
-//@include ib;
-
-//--------------------------------------
-//    imgC（画像のセンタリング）
-//--------------------------------------
-@mixin imgC {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-//@include imgC
-
-//--------------------------------------
-//    tableCell（テーブルセル）
-//--------------------------------------
-@mixin tc {
-    display: table-cell;
-    *display: inline;
-    *zoom: 1;
-    vertical-align: middle;
-}
-
-//@include tc
-
-//--------------------------------------
-//    visuallyhidden（非表示）
-//--------------------------------------
-@mixin vh {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    border: 0;
-    clip: (0 0 0 0);
-    overflow: hidden;
-}
-
-//@include vh
-
-//--------------------------------------
-//    image replace（画像置き換え）
-//--------------------------------------
-@mixin ir {
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-//@include ir
-
-//--------------------------------------
-//    vertical-align（天地の中央に配置）
-//--------------------------------------
-@mixin va {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-//@include vertical-align
 
 //--------------------------------------
 //    gradient（グラデーション）
 //--------------------------------------
 @mixin grd($start-color,$end-color,$orientation) {
-        background: $start-color;
-        @if $orientation vertical {
-            // vertical
-            background: -moz-linear-gradient(top, $start-color 0%, $end-color 100%);
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start-color), color-stop(100%, $end-color));
-            background: -webkit-linear-gradient(top, $start-color 0%, $end-color 100%);
-            background: -o-linear-gradient(top, $start-color 0%, $end-color 100%);
-            background: -ms-linear-gradient(top, $start-color 0%, $end-color 100%);
-            background: linear-gradient(to bottom, $start-color 0%, $end-color 100%);
-        }
-        @else if $orientation horizontal {
-            // horizontal
-            background: -moz-linear-gradient(left, $start-color 0%, $end-color 100%);
-            background: -webkit-gradient(linear, left top, right top, color-stop(0%, $start-color), color-stop(100%, $end-color));
-            background: -webkit-linear-gradient(left, $start-color 0%, $end-color 100%);
-            background: -o-linear-gradient(left, $start-color 0%, $end-color 100%);
-            background: -ms-linear-gradient(left, $start-color 0%, $end-color 100%);
-            background: linear-gradient(to right, $start-color 0%, $end-color 100%);
-        }
-        @else {
-            // radial
-            background: -moz-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
-            background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $start-color), color-stop(100%, $end-color));
-            background: -webkit-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
-            background: -o-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
-            background: -ms-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
-            background: radial-gradient(ellipse at center, $start-color 0%, $end-color 100%);
-        }
-    }
-
-//@include grd(#ff00ff, #ff00cc, vertical)
-
-//--------------------------------------
-//    flat-button（フラットボタン）
-//--------------------------------------
-@mixin flatBtn($font,$font-size,$font-color,$background-color,$border-radius,$padding,$transition-speed) {
-    display: inline-block;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: $font;
-    font-size: $font-size;
-    color: $font-color;
-    background-color: $background-color;
-    padding: $padding;
-    border-radius: $border-radius;
-    transition: color $transition-speed, background $transition-speed;
-    &:hover {
-        background: lighten($background-color, 10%);
-    }
+	background: $start-color;
+	@if $orientation vertical {
+		// vertical
+		background: -moz-linear-gradient(top, $start-color 0%, $end-color 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start-color), color-stop(100%, $end-color));
+		background: -webkit-linear-gradient(top, $start-color 0%, $end-color 100%);
+		background: -o-linear-gradient(top, $start-color 0%, $end-color 100%);
+		background: -ms-linear-gradient(top, $start-color 0%, $end-color 100%);
+		background: linear-gradient(to bottom, $start-color 0%, $end-color 100%);
+	}
+	@else if $orientation horizontal {
+		// horizontal
+		background: -moz-linear-gradient(left, $start-color 0%, $end-color 100%);
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%, $start-color), color-stop(100%, $end-color));
+		background: -webkit-linear-gradient(left, $start-color 0%, $end-color 100%);
+		background: -o-linear-gradient(left, $start-color 0%, $end-color 100%);
+		background: -ms-linear-gradient(left, $start-color 0%, $end-color 100%);
+		background: linear-gradient(to right, $start-color 0%, $end-color 100%);
+	}
+	@else {
+		// radial
+		background: -moz-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $start-color), color-stop(100%, $end-color));
+		background: -webkit-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+		background: -o-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+		background: -ms-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+		background: radial-gradient(ellipse at center, $start-color 0%, $end-color 100%);
+	}
 }
 
-//@include flat-btn(“Arial”, 12px, #ffffff, #34dec6, 4px, 5px 10px, 300ms)
-
-//--------------------------------------
-//    ghost-button（ゴーストボタン）
-//--------------------------------------
-@mixin ghostBtn($font,$font-size,$font-color,$border-size,$border-color,$padding,$transition-speed,$hover-color) {
-        display: inline-block;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-family: $font;
-        font-size: $font-size;
-        color: $font-color;
-        border: $border-size solid $border-color;
-        padding: $padding;
-        transition: color $transition-speed, background $transition-speed;
-        &:hover {
-            background: $border-color;
-            color: $hover-color;
-        }
-    }
-
-//@include ghost-btn(“Arial”, 12px, #ffffff, 3px, #34dec6, 5px 10px, 300ms, #000000 )
-
-//--------------------------------------
-//    middleline（1行テキスト上下中央配置）
-//--------------------------------------
-@mixin middleL($height,$ie: 0) {
-        height: $height + px;
-        line-height: $height + px;
-    }
-
-//@include middleL(25)
+//@include grd(#ff00ff, #ff00cc, vertical)
 
 //--------------------------------------
 //    keyframe animation
@@ -364,17 +161,3 @@ $ease-in-out-circ:cubic-bezier(0.785, 0.135, 0.15, 0.86);
 $ease-in-back:cubic-bezier(0.6, -0.28, 0.735, 0.045);
 $ease-out-back:cubic-bezier(0.175, 0.885, 0.32, 1.275);
 $ease-in-out-back:cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-//--------------------------------------
-//    Flexbox
-//--------------------------------------
-
-@mixin flexbox {
-  display:-webkit-box; // old
-  display:-moz-box; // old
-  display:-ms-flexbox; // ie
-  display:-webkit-flex; // new
-  display:flex; // new
-}
-
-//@include flexbox();

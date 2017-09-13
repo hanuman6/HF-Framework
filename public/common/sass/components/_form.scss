@@ -3,137 +3,137 @@
 //    フォーム(TransmitMail)
 //============================================================n
 input:not([type]), input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
--webkit-appearance: none;
--moz-appearance: none;
-background: #fff;
-border: 1px solid #ccc;
-display: block;
-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-margin: 0;
-padding: 10px;
-@include tr(all, 300ms, linear);
-&:focus {
-border:1px solid #aaa;
-background: #fafafa;
-outline: none;
-}
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: #fff;
+	border: 1px solid #ccc;
+	display: block;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 10px;
+	transition: all 300ms $ease;
+	&:focus {
+		border:1px solid #aaa;
+		background: #fafafa;
+		outline: none;
+	}
 }
 
 select {
--webkit-appearance: none !important;
--moz-appearance: none !important;
-border: 1px solid #ccc;
-padding: 10px 6% 10px 10px;
-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-cursor: pointer;
-background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAZJCYWISIYIyQYIiUWIiIYIyQYIiXh0rToAAAACHRSTlMA/hTRqiinvwFkb0sAAABCSURBVHjajchBDsAgDAPBOJDw/x+XVN0icQGfPGs3i+2GEqeiLCXWLENzvdzrDfP2ls/NjfKbgimYglfBq2Dm+LwHguMA235EdKYAAAAASUVORK5CYII=") 94% center no-repeat;
-@include tr(all, 300ms, linear);
-&:focus {
-border:1px solid #aaa;
-background: #fafafa url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAZJCYWISIYIyQYIiUWIiIYIyQYIiXh0rToAAAACHRSTlMA/hTRqiinvwFkb0sAAABCSURBVHjajchBDsAgDAPBOJDw/x+XVN0icQGfPGs3i+2GEqeiLCXWLENzvdzrDfP2ls/NjfKbgimYglfBq2Dm+LwHguMA235EdKYAAAAASUVORK5CYII=") 94% center no-repeat;
-outline: none;
-}
+	-webkit-appearance: none !important;
+	-moz-appearance: none !important;
+	border: 1px solid #ccc;
+	padding: 10px 6% 10px 10px;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAZJCYWISIYIyQYIiUWIiIYIyQYIiXh0rToAAAACHRSTlMA/hTRqiinvwFkb0sAAABCSURBVHjajchBDsAgDAPBOJDw/x+XVN0icQGfPGs3i+2GEqeiLCXWLENzvdzrDfP2ls/NjfKbgimYglfBq2Dm+LwHguMA235EdKYAAAAASUVORK5CYII=") 94% center no-repeat;
+	transition: all 300ms $ease;
+	&:focus {
+		border:1px solid #aaa;
+		background: #fafafa url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAZJCYWISIYIyQYIiUWIiIYIyQYIiXh0rToAAAACHRSTlMA/hTRqiinvwFkb0sAAABCSURBVHjajchBDsAgDAPBOJDw/x+XVN0icQGfPGs3i+2GEqeiLCXWLENzvdzrDfP2ls/NjfKbgimYglfBq2Dm+LwHguMA235EdKYAAAAASUVORK5CYII=") 94% center no-repeat;
+		outline: none;
+	}
 }
 
 input[type=radio], input[type=checkbox] {
-display: none;
+	display: none;
 }
 
 .radio, .checkbox {
-box-sizing: border-box;
-@include tr(all, 200ms, linear);
-position: relative;
-display: inline-block;
-margin: 0 10px 0 0;
-padding: 10px 10px 10px 42px;
-border-radius: 4px;
-background: #f3f3f3;
-vertical-align: middle;
-cursor: pointer;
+	box-sizing: border-box;
+	transition: all 300ms $ease;
+	position: relative;
+	display: inline-block;
+	margin: 0 10px 0 0;
+	padding: 10px 10px 10px 42px;
+	border-radius: 4px;
+	background: #f3f3f3;
+	vertical-align: middle;
+	cursor: pointer;
+	&:hover {
+		background-color: darken(#f3f3f3,3%);
+	&:after {
+		border-color: #53b300;
+	}
+}
 
-&:hover {
-background-color: darken(#f3f3f3,3%);
 &:after {
-border-color:  #53b300;
-}
-}
-
-&:after {
-@include tr(all, 200ms, linear);
-position: absolute;
-top: 50%;
-left: 15px;
-display: block;
-margin-top: -10px;
-width: 16px;
-height: 16px;
-border: 2px solid #bbb;
-border-radius: 4px;
-content: '';
-}
+	transition: all 300ms $ease;
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	display: block;
+	margin-top: -10px;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #bbb;
+	border-radius: 4px;
+	content: '';
+	}
 }
 .radio {
-&:before {
-@include tr(all, 200ms, linear);
-position: absolute;
-top: 50%;
-left: 20px;
-display: block;
-margin-top: -5px;
-width: 10px;
-height: 10px;
-border-radius: 50%;
-background-color:  #53b300;
-content: '';
-opacity: 0;
-input[type=radio]:checked + & {
-opacity: 1;
-}
-}
+	&:before {
+		transition: all 300ms $ease;
+		position: absolute;
+		top: 50%;
+		left: 20px;
+		display: block;
+		margin-top: -5px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color:  #53b300;
+		content: '';
+		opacity: 0;
+		input[type=radio]:checked + & {
+			opacity: 1;
+		}
+	}
 }
 
 .checkbox {
-&:before {
-@include tr(all, 200ms, linear);
-position: absolute;
-top: 50%;
-left: 21px;
-display: block;
-margin-top: -7px;
-width: 5px;
-height: 9px;
-border-right: 3px solid  #53b300;
-border-bottom: 3px solid  #53b300;
-content: '';
-opacity: 0;
--webkit-transform: rotate(45deg);
--ms-transform: rotate(45deg);
-transform: rotate(45deg);
-input[type=checkbox]:checked + & {
-opacity: 1;
-}
-}
+	&:before {
+		transition: all 300ms $ease;
+		position: absolute;
+		top: 50%;
+		left: 21px;
+		display: block;
+		margin-top: -7px;
+		width: 5px;
+		height: 9px;
+		border-right: 3px solid  #53b300;
+		border-bottom: 3px solid  #53b300;
+		content: '';
+		opacity: 0;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+		input[type=checkbox]:checked + & {
+			opacity: 1;
+		}
+	}
 }
 
 .error {
-color: red;
-background: #f9cee0;
-padding: 5px 10px;
-margin: 10px 0;
-border-radius: 4px;
-@include ib;
+	color: red;
+	background: #f9cee0;
+	padding: 5px 10px;
+	margin: 10px 0;
+	border-radius: 4px;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .error-list {
-margin: 0;
-padding: 0;
-list-style-type: none;
-li {
-color: red;
-}
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	li {
+		color: red;
+	}
 }
 
 //============================================================
@@ -149,11 +149,11 @@ color: red;
 //============================================================
 
 .checkbox {
-margin: 0 0 3%;
+	margin: 0 0 3%;
 }
 
 input, select, textarea, .checkbox {
-width: 100%;
+	width: 100%;
 }
 
 //============================================================

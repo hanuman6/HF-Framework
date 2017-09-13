@@ -2,22 +2,46 @@
 //============================================================
 //      フォント設定
 //============================================================
-@font-face {
-    font-family: 'Noto Sans Japanese';
-    font-style: normal;
-    font-weight: 300;
-    src: url("//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2") format("woff2"),url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff) format("woff"),url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf) format("opentype");
+@font-face{
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
+  font-weight: 300;
+}
+
+@font-face{
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
+  font-weight: 500;
+}
+
+@font-face{
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
+  font-weight: bold;
 }
 @font-face {
-    font-family: 'Noto Sans Japanese';
-    font-style: normal;
-    font-weight: 700;
-    src: url("//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2") format("woff2"),url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format("woff"),url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format("opentype");
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 100;
 }
 @font-face {
-    font-family: 'icomoon';
-    src: url("../fonts/icomoon.eot?8wlz7c");
-    src: url("../fonts/icomoon.eot?8wlz7c#iefix") format("embedded-opentype"),url("../fonts/icomoon.ttf?8wlz7c") format("truetype"),url("../fonts/icomoon.woff?8wlz7c") format("woff"),url("../fonts/icomoon.svg?8wlz7c#icomoon") format("svg");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 200;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+}
+
+/* IE10以上 */
+@media all and (-ms-high-contrast: none)  {
+  html {
+    font-family: Verdana, Meiryo, sans-serif;
+  }
+}
+@media all and (-ms-high-contrast: active) {
+  html {
+    font-family: Verdana, Meiryo, sans-serif;
+  }
 }

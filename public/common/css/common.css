@@ -118,25 +118,50 @@ label {
 }
 
 @font-face {
-  font-family: 'Noto Sans Japanese';
-  font-style: normal;
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
   font-weight: 300;
-  src: url("//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2") format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf) format("opentype");
 }
 
 @font-face {
-  font-family: 'Noto Sans Japanese';
-  font-style: normal;
-  font-weight: 700;
-  src: url("//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2") format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format("opentype");
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
+  font-weight: 500;
 }
 
 @font-face {
-  font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?8wlz7c");
-  src: url("../fonts/icomoon.eot?8wlz7c#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?8wlz7c") format("truetype"), url("../fonts/icomoon.woff?8wlz7c") format("woff"), url("../fonts/icomoon.svg?8wlz7c#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 200;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+}
+
+/* IE10以上 */
+@media all and (-ms-high-contrast: none) {
+  html {
+    font-family: Verdana, Meiryo, sans-serif;
+  }
+}
+
+@media all and (-ms-high-contrast: active) {
+  html {
+    font-family: Verdana, Meiryo, sans-serif;
+  }
 }
 
 /*--------------------------------------------
@@ -175,13 +200,6 @@ label {
 
 /*クリアフィックス(簡易)*/
 .oh {
-  overflow: hidden;
-}
-
-/*画像置換*/
-.ir {
-  text-indent: 100%;
-  white-space: nowrap;
   overflow: hidden;
 }
 
@@ -440,34 +458,14 @@ label {
   clear: both !important;
 }
 
-/*インラインブロック*/
-.ib {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-}
-
-/*画像ホバー*/
-.hvop:hover {
-  opacity: 0.8 !important;
-}
-
-/*画像ホバー(拡大)*/
-.hvsc:hover {
-  -webkit-transform: scale(1.2 !important);
-      -ms-transform: scale(1.2 !important);
-          transform: scale(1.2 !important);
-}
-
 /*--------------------------------------------
 標準設定
 ---------------------------------------------*/
 body {
   background-color: #f2f2f2;
   color: #222;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1;
-  font-family: "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
 }
@@ -480,7 +478,7 @@ a {
 a:hover {
   text-decoration: none;
   outline: 0;
-  transition: all 300ms ease;
+  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 a:active {
@@ -490,69 +488,6 @@ a:active {
 
 a:focus {
   border: 0 none;
-}
-
-@media screen and (min-width: 768px) {
-  /*--------------------------------------------
-    1.ヘッダー
-  ---------------------------------------------*/
-  header {
-    width: 100%;
-  }
-  header nav.g_nav {
-    *zoom: 1;
-  }
-  header nav.g_nav:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  header nav.g_nav:before {
-    content: "";
-    display: table;
-  }
-  header nav.g_nav li {
-    float: left;
-    list-style-type: none;
-  }
-  /*--------------------------------------------
-    2.コンテンツ
-  ---------------------------------------------*/
-  .contents {
-    *zoom: 1;
-    width: 100%;
-    margin: 0 auto;
-    background: #ccc;
-  }
-  .contents:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .contents:before {
-    content: "";
-    display: table;
-  }
-  /*--------------------------------------------
-    3.フッター
-  ---------------------------------------------*/
-  footer {
-    *zoom: 1;
-    width: 1040px;
-    margin: 0 auto;
-  }
-  footer:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  footer:before {
-    content: "";
-    display: table;
-  }
-  footer .copyright {
-    text-align: center;
-  }
 }
 
 @media print {

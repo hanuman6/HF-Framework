@@ -23,8 +23,6 @@
 .cf{@include cf}
 /*クリアフィックス(簡易)*/
 .oh{overflow: hidden;}
-/*画像置換*/
-.ir{@include ir}
 /*テキストサイズ変更*/
 .fz10{font-size:10px!important;}
 .fz11{font-size:11px!important;}
@@ -82,9 +80,3 @@
 .imgfl{float: left;margin: 0 $px $px 0!important;}
 .imgfr{float: right;margin: 0 0 $px $px!important;}
 .cb{clear: both!important;}
-/*インラインブロック*/
-.ib{@include ib;}
-/*画像ホバー*/
-.hvop:hover{@include op(0.8 !important);}
-/*画像ホバー(拡大)*/
-.hvsc:hover{transform: scale(1.2 !important);}
